@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{37A0C56C-12B0-42F8-8695-E5446D4C1820}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HolesTask</RootNamespace>
+    <AssemblyName>HolesTask</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RevitAPI">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2017\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2017\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="CommandConfirmHole.cs" />
+    <Compile Include="CommandCreateHoleTask.cs" />
+    <Compile Include="CommandDisallowHole.cs" />
+    <Compile Include="CommandGiveHolesTask.cs" />
+    <Compile Include="CommandRefreshHoleTask.cs" />
+    <Compile Include="CommandSaveHolesTask.cs" />
+    <Compile Include="CommandSettings.cs" />
+    <Compile Include="FormSettingsCreateTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSettingsCreateTask.Designer.cs">
+      <DependentUpon>FormSettingsCreateTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericMepElement.cs" />
+    <Compile Include="GenericStructureElement.cs" />
+    <Compile Include="HostInfo.cs" />
+    <Compile Include="Intersection.cs" />
+    <Compile Include="LocationInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectionFilters.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="StaticAngle.cs" />
+    <Compile Include="StaticFamily.cs" />
+    <Compile Include="StaticLinkedDoc.cs" />
+    <Compile Include="StaticPlaceTask.cs" />
+    <Compile Include="StaticSaveDataToFamilyInstance.cs" />
+    <Compile Include="StaticXML.cs" />
+    <Compile Include="StaticXMLsettings.cs" />
+    <Compile Include="VariableField.cs" />
+    <Compile Include="XMLinfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormSettingsCreateTask.resx">
+      <DependentUpon>FormSettingsCreateTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SaveHolesTask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\PlaceHoleTask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GiveHolesTask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\HolesTaskRefresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ConfirmHoleTask.png" />
+    <EmbeddedResource Include="Resources\DisallowHoleTask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Samples\040_М_Марка отверстия.rfa" />
+    <None Include="Samples\проемы.rvt" />
+    <None Include="Samples\Тест задания ИС.rvt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
